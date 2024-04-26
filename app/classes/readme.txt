@@ -1,6 +1,6 @@
 This module/folder holds all the classes that support the app. 
 Currently this is where all the database and webforms are defiined. When you instantiate
-these classes you get an object that .that you can then manipulate with your code.
+these classes you get an object that you can then manipulate with your code.
 
 Forms:
 Forms are created by creating an object like this.:
