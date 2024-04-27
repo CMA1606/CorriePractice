@@ -6,6 +6,10 @@ from flask import render_template
 def index():
     return render_template('index.html')
 
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
 # Here's the basics for making any new route
 # It's a good idea to use the same name/word, and same capitalization conventions
 # Add a route name, function name, and html template name 
