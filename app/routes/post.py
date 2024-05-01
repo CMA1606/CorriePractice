@@ -12,28 +12,19 @@ from flask_login import login_required
 import datetime as dt
 
 # This is the route to list all blogs
-@app.route('/post/list')
-@app.route('/posts/<tag>')
+@app.route('/post/list/<continent>')
+@app.route('/posts/<continent>')
 # This means the user must be logged in to see this page
 @login_required
-def postList(tag):
+def postList(continent):
     # This retrieves all of the 'blogs' that are stored in MongoDB and places them in a
     # mongoengine object as a list of dictionaries name 'blogs'.
-    posts = Post.objects()
-
-    filteredPosts = []
-
-    if tag:
-        for post in posts:
-            if post.tag.contains(tag):
-                filteredPosts.append(post)
-    else:
-        filteredPosts = posts
+    posts = Post.objects(tag=continent)
 
     # This renders (shows to the user) the blogs.html template. it also sends the blogs object 
     # to the template as a variable named blogs.  The template uses a for loop to display
     # each blog.
-    return render_template('posts.html',posts=filteredPosts)
+    return render_template('posts.html',posts=post)
 
 # This route will get one specific blog and any comments associated with that blog.  
 # The blogID is a variable that must be passsed as a parameter to the function and 

@@ -25,7 +25,8 @@ class ConsentForm(FlaskForm):
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
-    tag = StringField('Tag', validators=[DataRequired()])
+    tag = SelectField('Tag', choices=["Asia","Europe","North America", "South America"])
+    # tag = StringField('Tag', validators=[DataRequired()])
     submit = SubmitField('Post!')
 
 class CommentForm(FlaskForm):
