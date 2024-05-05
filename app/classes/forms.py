@@ -16,16 +16,10 @@ class ProfileForm(FlaskForm):
     submit = SubmitField('Post')
     role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
 
-class ConsentForm(FlaskForm):
-    adult_fname = StringField('First Name',validators=[DataRequired()])
-    adult_lname = StringField('Last Name',validators=[DataRequired()])
-    adult_email = EmailField('Email',validators=[Email()])
-    submit = SubmitField('Submit')
-
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
-    tag = SelectField('Tag', choices=["Asia","Europe","North America", "South America"])
+    tag = SelectField('Tag', choices=["Asia","Africa","Australia","Antartica","Europe","North America", "South America"])
     # tag = StringField('Tag', validators=[DataRequired()])
     submit = SubmitField('Post!')
 

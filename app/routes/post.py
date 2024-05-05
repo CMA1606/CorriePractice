@@ -27,8 +27,8 @@ def posts():
     return render_template('posts.html',posts=posts)
 
 # This is the route to list all blogs
-@app.route('/post/list/<continent>')
-@app.route('/posts/<continent>')
+@app.route('/post/list/continent')
+@app.route('/posts/continent')
 # This means the user must be logged in to see this page
 @login_required
 def postList(continent):

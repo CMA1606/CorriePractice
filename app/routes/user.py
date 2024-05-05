@@ -15,7 +15,6 @@ from flask_login import current_user
 def myProfile():
     # This sends the user to their profile page which renders the 'profilemy.html' template
     return render_template('profilemy.html')
-
 # This is the route for editing a profile
 # the methods part is required if you are using a form 
 @app.route('/myprofile/edit', methods=['GET','POST'])

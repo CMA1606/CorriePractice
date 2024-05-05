@@ -31,10 +31,6 @@ class User(UserMixin, Document):
     email = EmailField()
     image = FileField()
     prononuns = StringField()
-    adult_fname = StringField()
-    adult_lname = StringField()
-    adult_email = StringField()
-    consent = BooleanField(default=False)
 
     meta = {
         'ordering': ['lname','fname']
