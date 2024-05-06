@@ -17,7 +17,7 @@
         </a>
     {% endif %}
 
-    <h1 class="display-5">{{post.subject}}</h1>
+    <h1 class="display-5" style="color: cornsilk;">{{post.subject}}</h1>
     <p class="fs-3 text-break">
         {% if post.author.image %}
             <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(post.author.image.read())}}">
@@ -32,7 +32,7 @@
     <a href="/comment/new/{{post.id}}" class="btn btn-primary btn-sm" role="button">New Comment</a>
 
     {% if comments %}
-    <h1 class="display-5">Comments</h1>
+    <h1 class="display-5" style="color: cornsilk;">Comments</h1>
     {% for comment in comments %}
         {% if current_user == comment.author %}
             <a href="/comment/delete/{{comment.id}}"><img width="20" src="/static/delete.png"></a> 
@@ -50,7 +50,7 @@
         </p>
     {% endfor %}
     {% else %}
-        <h1 class="display-5">No Comments</h1>
+        <h1 class="display-5" style="color: cornsilk;">No Comments</h1>
     {% endif %}
     <!-- end of the comment section! -->
 {% else %}

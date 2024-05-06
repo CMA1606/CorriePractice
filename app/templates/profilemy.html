@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1 class="display-1">
+<h1 class="display-1" style="color: cornsilk;">
     My Profile
     <a href="/myprofile/edit">
         <img width="40" src="/static/edit.png">
     </a>
 </h1>
-<div class="row">
+<div class="row" style="color: cornsilk;">
     <div class="col-2">
         {% if current_user.image %}
             <img class="img-thumbnail img-fluid" src="data:image;base64,{{base64encode(current_user.image.read())}}"> <br>
@@ -22,10 +22,10 @@
             Google User Name: {{current_user.gname}} <br>
         {% endif %}
         Email: {{current_user.email}} <br>
-        <hr>
+        <a href="{{url_for('posts') }}">View Posts</a>
     </div>
 </div>
-    <a href="{{url_for('posts') }}">View Posts</a>
+
 <br>
 
 
