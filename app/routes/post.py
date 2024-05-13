@@ -27,8 +27,8 @@ def posts():
     return render_template('posts.html',posts=posts)
 
 # This is the route to list all blogs
-@app.route('/post/list/continent')
-@app.route('/posts/continent')
+@app.route('/post/list/<continent>')
+@app.route('/posts/<continent>')
 # This means the user must be logged in to see this page
 @login_required
 def postList(continent):
@@ -39,7 +39,7 @@ def postList(continent):
     # This renders (shows to the user) the blogs.html template. it also sends the blogs object 
     # to the template as a variable named blogs.  The template uses a for loop to display
     # each blog.
-    return render_template('posts.html',posts=post)
+    return render_template('posts.html',posts=posts)
 
 # This route will get one specific blog and any comments associated with that blog.  
 # The blogID is a variable that must be passsed as a parameter to the function and 
