@@ -12,8 +12,8 @@
 
 {% if posts %}
     {% for post in posts %}
-        <div class="container row border-bottom" style="text-align: center;">
-            <div class="col-2" style="text-align: center;">
+        <div class="container row border-bottom" style="text-align: center; color: cornsilk;">
+            <div class="col-2" style="text-align: center; color: cornsilk;">
                 {% if loop.index == 1 %}
                 <h3 class="display-5 text-center">Date</h3>
                 {% endif %}
@@ -22,13 +22,13 @@
                     {{moment(post.create_date).calendar()}}
                 </a>
             </div>
-            <div class="col-2" style="text-align: center;">
+            <div class="col-2" style="text-align: center; color: cornsilk;">
                 {% if loop.index == 1 %}
                 <h3 class="display-5 text-center">User</h3>
                 {% endif %}
                 {{post.author.fname}} {{post.author.lname}}
             </div>
-            <div class="col" style="text-align: center;">
+            <div class="col" style="text-align: center; color: cornsilk;">
                 {% if loop.index == 1 %}
                     <h3 class="display-5 text-center">Subject</h3>
                 {% endif %}
