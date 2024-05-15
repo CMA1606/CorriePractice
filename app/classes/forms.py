@@ -15,6 +15,7 @@ class ProfileForm(FlaskForm):
     image = FileField("Image") 
     submit = SubmitField('Post')
     role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
+    birth_year = SelectField('Year',choices=[("1950", "1960"),("1970", "1980"),("1990", "2000"),("2010", "2020")])
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
